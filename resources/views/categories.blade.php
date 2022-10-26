@@ -1,14 +1,15 @@
 @extends('layouts.main')
-@section('container')
 
-<h1 class="mb-5">Post Categories</h1>
-@foreach ($categories as $category)
-    <article class="mb-5">
-        <ul>
-            <li>
-                <h1><a href="/categories/{{$category->slug}}">{{$category->name}}</a></h1>
-            </li>
-        </ul>
-    </article>
-@endforeach
+@section('container')
+<h1 class="mb-5">Post Category : {{ $category }}</h1>
+    @foreach ($categories as $category)
+    <ul>
+        <li>
+            <h2>
+                <a href="/posts/{{ $category->slug }}">{{ $category->title }}</a>
+            </h2>
+        </li>
+    </ul>
+            
+    @endforeach
 @endsection
